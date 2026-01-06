@@ -19,10 +19,17 @@ function createBoard(dimensions) {
   const matrix = [];
 
   for (let i = 0; i < rows; i++) {
+    // initialise inner arr
+    matrix[i] = [];
     for (let j = 0; j < cols; j++) {
-      matrix[i].push('j');
+      // if (i + j) % 2 === 0, it's an "X", otherwise "0"
+      if ((i + j) % 2 === 0) {
+        matrix[i].push('X');
+      } else {
+        matrix[i].push('O');
+      }
     }
   }
   console.log(matrix);
-  return dimensions;
+  return matrix;
 }
